@@ -1,7 +1,65 @@
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
 .timeline {
-  color: white;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ccc;
 }
 
 .card {
-  border: 3px solid white;
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+  width: 400px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+  border: 10px solid transparent;
+  border-right: 10px solid #ccc;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+  border: 10px solid transparent;
+  border-right: 10px solid #ccc;
+}
+
+.card.left {
+  left: 50%;
+  margin-left: -420px; /* Adjust this value based on card width and margin */
+}
+
+.card.right {
+  left: 50%;
+  margin-left: 20px;
+}
+
+.card h2 {
+  margin-bottom: 10px;
 }
